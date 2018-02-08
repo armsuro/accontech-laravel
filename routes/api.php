@@ -17,6 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+header('Access-Control-Allow-Origin:  *');
+header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
+header('Access-Control-Allow-Headers:  Content-Type');
+
 Route::get('togo-list', 'ToGoController@index');
 Route::post('togo-list', 'ToGoController@store');
 Route::put('togo-list/{id}', 'ToGoController@update');
